@@ -61,5 +61,8 @@ def get_helper(helper_type):
     elif helper_type == 'pytorch':
         from fedn.utils.pytorchhelper import PytorchHelper
         return PytorchHelper()
+    elif helper_type == 'robyn':
+        from fedn.utils.robynhelper import RobynHelper
+        return RobynHelper()
     else:
         return None
