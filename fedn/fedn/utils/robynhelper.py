@@ -67,10 +67,6 @@ class RobynHelper(HelperBase):
         if not path:
             path = self.get_tmp_path()
 
-        #weights_dict = {}
-        #for i, w in enumerate(weights):
-        #    weights_dict[str(i)] = w
-
         np.savez_compressed(path, **weights)
 
         return path
@@ -91,35 +87,7 @@ class RobynHelper(HelperBase):
         os.close(fd)
         return path
 
-    def save_model(self, weights, path=None):
-        """
 
-        :param weights:
-        :param path:
-        :return:
-        """
-        if not path:
-            path = self.get_tmp_path()
-
-        weights_dict = {}
-        for i, w in enumerate(weights):
-            weights_dict[str(i)] = w
-
-        np.savez_compressed(path, **weights_dict)
-
-        return path
-
-    def load_model(self, path="weights.npz"):
-        """
-
-        :param path:
-        :return:
-        """
-        a = np.load(path)
-        weights = []
-        for i in range(len(a.files)):
-            weights.append(a[str(i)])
-        return weights
 
     def load_model_from_BytesIO(self, model_bytesio):
         """ Load a model from a BytesIO object. """
