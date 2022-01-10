@@ -13,7 +13,7 @@ setup(
     python_requires='>=3.6,<4',
     install_requires=[
         "PyYAML>=5.4",
-        "requests",
+        "requests>=2.24.0",
         "urllib3>=1.26.4",
         "minio",
         "python-slugify",
