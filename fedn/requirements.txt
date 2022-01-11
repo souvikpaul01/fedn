@@ -6,7 +6,7 @@ python-slugify
 grpcio
 grpcio-tools
 numpy~=1.19.5
-protobuf
+protobuf<4.0
 pymongo
 Flask
 Flask-WTF
