@@ -76,10 +76,11 @@ class RobynHelper(HelperBase):
         :param path:
         :return:
         """
-        print("mattias robyn load_model")
-
-        weights = np.load(path)
-        return weights
+        b = np.load(path)
+        weights_np = {}
+        for i in b.files:
+            weights_np[i] = b[i]
+        return weights_np
 
     def get_tmp_path(self):
         """ Return a temporary output path compatible with save_model, load_model. """
